@@ -8,7 +8,7 @@ export default function App  () {
   useEffect(()=>{
     const dataFetch = async () => {
       try {
-        const response = await fetch('https://www.amfiindia.com/spages/NAVAll.txt?t=18022020035513');
+        const response = await fetch('/public/NAVAll.txt');
         const text = await response.text();
         const lines = text.split('\n');
         setFetchData(lines.filter((e)=>{ return e.charAt(0).match(/^\d+$/) }));
