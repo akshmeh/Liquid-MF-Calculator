@@ -8,7 +8,7 @@ export default function App  () {
   useEffect(()=>{
     const dataFetch = async () => {
       try {
-        const response = await fetch('/public/NAVAll.txt');
+        const response = await fetch('/Liquid-MF-Calculator/NAVAll.txt');
         const text = await response.text();
         const lines = text.split('\n');
         setFetchData(lines.filter((e)=>{ return e.charAt(0).match(/^\d+$/) }));
