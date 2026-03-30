@@ -25,20 +25,20 @@ export default function App  () {
     setToggleState(index);
   };
 
-  const getActiveClass = (index, className) =>
-    ToggleState === index ? className : "";
+  const getActiveClass = (index, className, restClassName) =>
+    ToggleState === index ? className : (restClassName || "");
 
   return (
     loading?<div>Loading</div>:<div className="w-screen p-10 rounded">
     <ul className="tab-list">
       <li
-        className={`tabs ${getActiveClass(1, "active-tabs")}`}
+        className={`tabs ${getActiveClass(1, "active-tabs dark:text-black", "dark:text-white")}`}
         onClick={() => toggleTab(1)}
       >
         Amount
       </li>
       <li
-        className={`tabs ${getActiveClass(2, "active-tabs")}`}
+        className={`tabs ${getActiveClass(2, "active-tabs dark:text-black", "dark:text-white")}`}
         onClick={() => toggleTab(2)}
       >
         Units
