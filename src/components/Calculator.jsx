@@ -36,7 +36,7 @@ export default function Calculator({fetchData,type}){
     return(<>
     <div className="w-full flex justify-center flex-col items-center p-5">
     {type=="Amount"?<h1 className="font-bold text-5xl mb-8">Amount Calculator</h1>:<h1 className="font-bold text-5xl mb-8">Units Calculator</h1>}
-        <input type="text" onChange={(e) => searchItems(e.target.value)} className="md:w-1/2 p-3 rounded mb-8 w-full" placeholder="Search your Mutual Fund..."/>
+        <input type="text" onChange={(e) => searchItems(e.target.value)} className="md:w-1/2 p-3 rounded mb-8 w-full dark:text-white" placeholder="Search your Mutual Fund..."/>
         {filteredResults.map((e,i)=>{
             if(i<6){
                 
@@ -48,11 +48,11 @@ export default function Calculator({fetchData,type}){
       
         {type=="Amount"? <div className="flex gap-4 items-center  flex-col md:flex-row">
         <label htmlFor="num" className="font-bold text-2xl">Amount:</label>
-        <input type="number" name="num" id="num" onChange={(e)=>{handleAmount(e.target.value)}}  className="p-3 rounded"/>
+        <input type="number" name="num" id="num" onChange={(e)=>{handleAmount(e.target.value)}}  className="p-3 rounded dark:text-white"/>
         <h2 className="font-bold text-2xl">Units: <span className="font-normal">{result}</span></h2>
         </div>: <div className="flex gap-4 items-center flex-col md:flex-row">
         <label htmlFor="num" className="font-bold text-2xl">Units:</label>
-        <input type="number" name="num" id="num" onChange={(e)=>{handleUnits(e.target.value)}} className="p-3 rounded"/>
+        <input type="number" name="num" id="num" onChange={(e)=>{handleUnits(e.target.value)}} className="p-3 rounded dark:text-white"/>
         <h2 className="font-bold text-2xl">Amount: <span className="font-normal">{result}</span></h2>
         </div>}</div>:""}
         
