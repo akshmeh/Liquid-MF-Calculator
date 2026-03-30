@@ -37,12 +37,14 @@ export default function Calculator({fetchData,type}){
     <div className="w-full flex justify-center flex-col items-center p-5">
     {type=="Amount"?<h1 className="font-bold text-5xl mb-8">Amount Calculator</h1>:<h1 className="font-bold text-5xl mb-8">Units Calculator</h1>}
         <input type="text" onChange={(e) => searchItems(e.target.value)} className="md:w-1/2 p-3 rounded mb-8 w-full dark:text-white" placeholder="Search your Mutual Fund..."/>
+       <div className={filteredResults.length === 0 ? "" : "mb-4"}>
         {filteredResults.map((e,i)=>{
             if(i<6){
                 
                 return <div key={i} onClick={()=>{handleEachMF(e.split(";")[3])}} role="button" className="w-full border-b p-3 bg-white hover:bg-slate-400 hover:text-white">{e.split(";")[3]}</div>
             }
         })}
+           </div>
         {mutualfund.length!=0?<div className="w-100"><h2 className="font-bold text-3xl mb-8">Mutual Fund Name: <span className="font-normal">{mutualfund[3]}</span></h2>
         <h3 className="font-bold text-2xl mb-8">NAV: <span className="font-normal">{mutualfund[4]}</span></h3>
       
